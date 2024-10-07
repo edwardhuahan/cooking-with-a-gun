@@ -60,7 +60,7 @@ jobs:
           allowDirtyBuild: true
       - uses: actions/upload-artifact@v3
         with:
-          name: Build
+          name: Linux
           path: build
 
   buildForWindowsBasedPlatforms:
@@ -76,7 +76,6 @@ jobs:
         targetPlatform:
           - StandaloneWindows # Build a Windows 32-bit standalone.
           - StandaloneWindows64 # Build a Windows 64-bit standalone.
-          - WSAPlayer # Build a UWP App.
 
     steps:
       - uses: actions/checkout@v4
@@ -105,7 +104,7 @@ jobs:
           customParameters: '-myParameter myValue -myBoolean -ThirdParameter andItsValue'
       - uses: actions/upload-artifact@v3
         with:
-          name: Build
+          name: Windows
           path: build
 
   buildForMacOSBasedPlatforms:
@@ -151,5 +150,5 @@ jobs:
 
       - uses: actions/upload-artifact@v3
         with:
-          name: Build
+          name: MacOS
           path: build
